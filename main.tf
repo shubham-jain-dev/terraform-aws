@@ -10,7 +10,7 @@ resource "aws_s3_bucket_ownership_controls" "example" {
     object_ownership = "BucketOwnerPreferred"
   }
 }
-
+ 
 resource "aws_s3_bucket_public_access_block" "example" {
   bucket = aws_s3_bucket.mybucket.id
 
@@ -29,3 +29,39 @@ resource "aws_s3_bucket_acl" "example" {
   bucket = aws_s3_bucket.mybucket.id
   acl    = "public-read"
 }
+
+resource "aws_s3_object" "index" {
+  bucket = aws_s3_bucket.mybucket.id
+  key = "index.html"
+  source = "index.html"
+  acl = "public-read"
+  content_type = "text/html"
+    metadata = {
+    "cache-control" = "no-cache, no-store, must-revalidate"
+  }
+  etag = md5(file("index.html"))
+}
+
+
+resource "aws_s3_object" "error" {
+  bucket = aws_s3_bucket.mybucket.id
+  key = "error.html"
+  source = "error.html"
+  acl = "public-read"
+  content_type = "text/html"
+}
+
+
+resource "aws_s3_bucket_website_configuration" "website" {
+  bucket = aws_s3_bucket.mybucket.id
+  index_document {
+    suffix = "index.html"
+  }
+
+  error_document {
+    key = "error.html"
+  }
+
+  depends_on = [ aws_s3_bucket_acl.example ]
+}
+

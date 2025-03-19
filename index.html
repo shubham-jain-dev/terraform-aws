@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>DEVOPS PROJECT</title>
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Body Styles */
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(135deg, #f06, #48c6ef, #6f86d6);
+      background-size: 400% 400%;
+      animation: gradientAnimation 15s ease infinite;
+      color: #fff;
+    }
+
+    @keyframes gradientAnimation {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Header */
+    header {
+      text-align: center;
+      padding: 50px 20px;
+      background-color: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+    }
+
+    header h1 {
+      font-size: 3.5rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+      background: linear-gradient(90deg, #48c6ef, #6f86d6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    header p {
+      font-size: 1.3rem;
+      margin-top: 15px;
+      opacity: 0.9;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Navigation Bar */
+    nav {
+      margin-top: 20px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 15px;
+      font-size: 1.1rem;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #48c6ef;
+    }
+
+    /* Course Container */
+    .courses-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+
+    /* Course Card Styles */
+    .course-card {
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(15px);
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .course-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    .course-card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
+    .course-card h3 {
+      font-size: 1.6rem;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    .course-card p {
+      font-size: 1rem;
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .course-card .price {
+      font-size: 1.2rem;
+      margin-top: 15px;
+      color: #48c6ef;
+      font-weight: bold;
+    }
+
+    .course-card .button {
+      display: inline-block;
+      background-color: #48c6ef;
+      padding: 10px 20px;
+      margin-top: 15px;
+      text-decoration: none;
+      color: #fff;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    .course-card .button:hover {
+      background-color: #6f86d6;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 30px;
+      background-color: rgba(0, 0, 0, 0.6);
+      width: 100%;
+      font-size: 1rem;
+      letter-spacing: 1px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Online Learning Platform</h1>
+    <p>Empowering learners worldwide to master new skills and advance their careers through expertly designed courses.</p>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Courses</a>
+      <a href="#">About Us</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <div class="courses-container">
+    <!-- Course 1 -->
+    <div class="course-card">
+      <img src="https://cdn.prod.website-files.com/6344c9cef89d6f2270a38908/673f2a3b44c1ed4901bb43bb_6386328bea96dffacc89946b_d1.webp" alt="Web Development Bootcamp">
+      <h3>Web Development Bootcamp</h3>
+      <p>Master front-end and back-end technologies to become a full-stack developer in just 12 weeks.</p>
+      <div class="price">₹199.99</div>
+      <a href="#" class="button">Enroll Now</a>
+    </div>
+
+    <!-- Course 2 -->
+    <div class="course-card">
+      <img src="https://www.simplilearn.com/ice9/free_resources_article_thumb/what_is_Data_Science.jpg" alt="Data Science Masterclass">
+      <h3>Data Science Masterclass</h3>
+      <p>Learn data analysis, machine learning, and artificial intelligence from experts in the field.</p>
+      <div class="price">₹299.99</div>
+      <a href="#" class="button">Enroll Now</a>
+    </div>
+
+    <!-- Course 3 -->
+    <div class="course-card">
+      <img src="https://dsdeducation.in/wp-content/uploads/2024/02/digital_marketing_img_00-1.jpg" alt="Digital Marketing Essentials">
+      <h3>Digital Marketing Essentials</h3>
+      <p>Become proficient in SEO, social media marketing, content creation, and more.</p>
+      <div class="price">₹149.99</div>
+      <a href="#" class="button">Enroll Now</a>
+    </div>
+
+    <!-- Course 4 -->
+    <div class="course-card">
+      <img src="https://icieducation.co.uk/blog/wp-content/uploads/2023/02/graphic-designer-with-colleague-1024x686.jpg" alt="Graphic Design Fundamentals">
+      <h3>Graphic Design Fundamentals</h3>
+      <p>Learn the basics of graphic design and become skilled in industry-standard tools like Photoshop and Illustrator.</p>
+      <div class="price">₹129.99</div>
+      <a href="#" class="button">Enroll Now</a>
+    </div>
+
+    <!-- Course 5 -->
+    <div class="course-card">
+      <img src="https://notes.edureify.com/wp-content/uploads/2024/10/python3.png" alt="Python Programming">
+      <h3>Python Programming</h3>
+      <p>Learn Python programming and apply your skills in real-world projects.</p>
+      <div class="price">₹179.99</div>
+      <a href="#" class="button">Enroll Now</a>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Courses Platform. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
